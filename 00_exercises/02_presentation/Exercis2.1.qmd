@@ -1,0 +1,24 @@
+---
+title: "Presentation session 2"
+author: 
+- name: "Anna Jannie Vijlbrief"
+  orcid: "0009-0004-9553-5493"
+
+format: 
+  revealjs: 
+    logo: "pansexual.png"
+---
+
+## How do I create a new slide
+
+By adding ## WITH a space
+It took me 5 minutes to figure out that I needed a space after the hashtags
+
+## My favorite equation is
+
+$$ 0^0 = 1 $$
+because in my head it makes absolutely no sense
+
+## Something that nobody here knows about me
+
+I used to have over 200 bottles of nailpolish and do crazy nail-art in primary/highschool. 
