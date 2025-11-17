@@ -1,0 +1,47 @@
+---
+title: "Research Compendium Deliverable"
+author: "A J Vijlbrief"
+format: html
+editor: visual
+---
+
+## Introduction
+
+------------------------------------------------------------------------
+
+This document is part of the research compendium deliverable for the MLARPIS course of MSBBSS 2025/2026. ADD link to website with info
+
+## Simulation study
+
+------------------------------------------------------------------------
+
+```{r}
+#| file: packages.R
+#| warning: false
+
+```
+
+```{r}
+#| file: data.import.R
+#| warning: false
+
+```
+
+
+```{r}
+#| file: data.transform.R
+#| warning: false
+
+```
+
+```{r}
+#| file: simulation.R
+#| warning: false
+
+```
+
+```{r}
+#| file: figures.R
+#| warning: false
+
+```
