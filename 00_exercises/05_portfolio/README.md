@@ -1,5 +1,7 @@
-# Markup languages and reproducible programming in statistics
+# Week 5 deliverables
 
-Deliverables for Markup languages and reproducible programming in statistics (202000010).
+The link to my website is: AJV304.github.io
+The link to my template: https://probable-waffle-6x56gxq6pgwc4xg5.github.dev/
+The zip of the repository can be found under file 'AJV304.github.io-main.zip'
 
 
