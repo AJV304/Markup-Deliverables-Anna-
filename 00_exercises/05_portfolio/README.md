@@ -1,5 +1,7 @@
-# Markup languages and reproducible programming in statistics
+# Week 5 deliverables
 
-Deliverables for Markup languages and reproducible programming in statistics (202000010).
+- The link to my website is: https://AJV304.github.io
+- The link to my template: https://github.com/AJV304/AJV304.github.io
+- The zip of the repository can be found under file 'AJV304.github.io-main.zip'
 
 
