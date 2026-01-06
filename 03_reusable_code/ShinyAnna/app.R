@@ -10,8 +10,10 @@ data3 <- read.csv("titanic.csv")
 ui <- fluidPage(
   
     #title
-    titlePanel("Anna's Shiny App about The Titanic!"),
+    titlePanel(
+      h1("Anna's Shiny App about The Titanic!", align = "center")),
     
+    br(),
     br(),
     
     #top part with image and text
