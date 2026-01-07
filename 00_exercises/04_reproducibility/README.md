@@ -1,5 +1,10 @@
-# Markup languages and reproducible programming in statistics
+# my-reproducible manuscript
 
-Deliverables for Markup languages and reproducible programming in statistics (202000010).
+<!-- badges: start -->
+<!-- badges: end -->
+
+My name is Anna Vijlbrief and the goal of my-reproducible-manuscript is to
+create a reproducible manuscript for the week 4 assignment of MLARPIS. This
+project was created by me on 05-11-25.
 
 
