@@ -9,39 +9,51 @@ editor: visual
 
 ------------------------------------------------------------------------
 
-This document is part of the research compendium deliverable for the MLARPIS course of MSBBSS 2025/2026. ADD link to website with info
+This document is part of the research compendium deliverable for the MLARPIS course of MSBBSS 2025/2026. I will be creating a reproducible file for [this](https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?Begi-nYear=2015) project by the CDC. The data relevant to this specific study can be found [here](https://github.com/mlarpis/markup/tree/main/documents/week-4/raw_data).
 
 ## Simulation study
 
 ------------------------------------------------------------------------
+We begin by loading all the required packages.
 
 ```{r}
+#| label: Loading packages
 #| file: packages.R
 #| warning: false
 
 ```
 
+
+Secondly, we import the data. The files should be in the same place, the compendium, as this project file.
 ```{r}
+#| label: Importing data
 #| file: data.import.R
 #| warning: false
 
 ```
 
-
+We will then transform the data.
 ```{r}
+#| label: Transforming data
 #| file: data.transform.R
 #| warning: false
 
 ```
 
+Continued by the simulation.
 ```{r}
+#| label: Simulating 
 #| file: simulation.R
 #| warning: false
+#| output: false
 
 ```
 
+And finally, we will display the results graphically. 
 ```{r}
+#| label: Creating figures
 #| file: figures.R
 #| warning: false
+
 
 ```
