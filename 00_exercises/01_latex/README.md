@@ -1,5 +1,5 @@
 # Markup languages and reproducible programming in statistics
 
-Deliverables for Markup languages and reproducible programming in statistics (202000010).
+This is deliverable 1 in which I perform different exercises with Latex.
 
 
