@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>research-report</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="Research report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Research report_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Research report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Research report_files/libs/quarto-html/popper.min.js"></script>
+<script src="Research report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Research report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Research report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Research report_files/libs/quarto-html/quarto-syntax-highlighting-a37c72dd2dbac68997fcdc15a3622e78.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Research report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Research report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Research report_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<div style="page-break-after: always;"></div>
+<!-- WHEN YOU WANT TO RUN THE CODE, REMOVE EVAL: FALSE FROM YAML -->
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Preregistrations were popularized during the 2010s in psychology as a way to increase reproducibility <span class="citation" data-cites="lindsay2018">(<a href="#ref-lindsay2018" role="doc-biblioref">Lindsay et al., 2018</a>)</span>. Preregistrations are documents that are published at the start of the research process, in which decisions concerning data collection and analysis are recorded. This is done with the aim of limiting the extent to which such decisions can be influenced by results.</p>
+<p>This practice increases transparency about research choices and has become more popular, with the number of preregistrations increasing annually <span class="citation" data-cites="ferguson2023 lindsay2018">(<a href="#ref-ferguson2023" role="doc-biblioref">Ferguson et al., 2023</a>; <a href="#ref-lindsay2018" role="doc-biblioref">Lindsay et al., 2018</a>)</span>. However, whether the desired effect of reduced flexibility and increased reproducibility has been achieved is debated. Preregistration should lead to more credible and reproducible results <span class="citation" data-cites="wagenmakers2012 lakens2019 nosek2018">(<a href="#ref-lakens2019" role="doc-biblioref">Lakens, 2019</a>; <a href="#ref-nosek2018" role="doc-biblioref">Nosek et al., 2018</a>; <a href="#ref-wagenmakers2012" role="doc-biblioref">Wagenmakers et al., 2012</a>)</span>. However, no difference has been found between preregistered and non-preregistered papers in the number of significant findings <span class="citation" data-cites="vandenakker2024a">(<a href="#ref-vandenakker2024a" role="doc-biblioref">van den Akker, van Assen, et al., 2024</a>)</span>, and no reduction in <em>p</em>-hacking <span class="citation" data-cites="brodeur2024">(<a href="#ref-brodeur2024" role="doc-biblioref">Brodeur et al., 2024</a>)</span>.</p>
+<p>There are many reasons for the uncertainty of the effect of preregistration. Preregistrations are often incomplete or overly vague about their decisions <span class="citation" data-cites="heirene2024 claesen2021">(<a href="#ref-claesen2021" role="doc-biblioref">Claesen et al., 2021</a>; <a href="#ref-heirene2024" role="doc-biblioref">Heirene et al., 2024</a>)</span>. Researchers also deviate from their predetermined choices <span class="citation" data-cites="vandenakker2024 claesen2021">(<a href="#ref-claesen2021" role="doc-biblioref">Claesen et al., 2021</a>; <a href="#ref-vandenakker2024" role="doc-biblioref">van den Akker, Bakker, et al., 2024</a>)</span>. Deviations have been found in as many as 93% of preregistered papers, with up to 89% being incompletely reported <span class="citation" data-cites="claesen2021 willroth2024">(<a href="#ref-claesen2021" role="doc-biblioref">Claesen et al., 2021</a>; <a href="#ref-willroth2024" role="doc-biblioref">Willroth &amp; Atherton, 2024</a>)</span>. These high deviation rates could be the reason why we see no reduction in significant findings and <em>p</em>-hacking.</p>
+<p>The aim of this project is to identify potentially problematic deviations and investigate their effects. I first discuss the goals and problems of preregistration and the potential impact of deviations in more detail. Then, through a simulation study, I examine the effect of said deviations on type I and type II error rates.</p>
+<section id="the-problem-and-the-solution" class="level3">
+<h3 class="anchored" data-anchor-id="the-problem-and-the-solution">The Problem and the Solution</h3>
+<p>The inability to reliably reproduce findings in the field of psychology is a known problem. The <span class="citation" data-cites="opensciencecollaboration2015">Open Science Collaboration (<a href="#ref-opensciencecollaboration2015" role="doc-biblioref">2015</a>)</span> found that only 36% of significant results were reproducible. One reason for this “replication crisis” is “researcher degrees of freedom” <span class="citation" data-cites="simmons2011">(<a href="#ref-simmons2011" role="doc-biblioref">Simmons et al., 2011</a>)</span>. This term describes the flexibility that researchers have in decisions made during their work. This includes decisions such as how many observations to collect, which statistical model to use and which covariates to add. When these decisions are made during data collection or analysis, researchers can make opportunistic choices which steer their results towards desired outcomes. Such opportunistic choices are called <em>p</em>-hacking and can dramatically increase false-positive rates <span class="citation" data-cites="stefan2023">(<a href="#ref-stefan2023" role="doc-biblioref">Stefan &amp; Schönbrodt, 2023</a>)</span>.</p>
+<p>The preregistration is proposed as a way to limit these types of practices. Templates are available to researchers, to inform them about what information is important to preregister. The preregistration is then uploaded to a public repository, with a time stamp of when it was published. Peer reviewers, and others, have access to the preregistration and can evaluate it before the start of the study or compare it to the final research paper.</p>
+<p>In theory preregistration works well, if researchers are specific in their preregistration and follow it closely, this should lead to better reproducible findings. In practice, preregistrations are often imprecise and incomplete, making them less effective at restricting researcher degrees of freedom. Another common problem are deviations from preregistration <span class="citation" data-cites="vandenakker2024 claesen2021">(<a href="#ref-claesen2021" role="doc-biblioref">Claesen et al., 2021</a>; <a href="#ref-vandenakker2024" role="doc-biblioref">van den Akker, Bakker, et al., 2024</a>)</span>. Deviating means that the preregistered plan is not being followed during the execution of the study. Deviations occur most commonly in data collection procedures, statistical models and exclusion criteria <span class="citation" data-cites="vandenakker2024">(<a href="#ref-vandenakker2024" role="doc-biblioref">van den Akker, Bakker, et al., 2024</a>)</span>. This includes differences in the total sample size, how outliers are selected and which covariates are used. These deviations could serve to further diminish the effectiveness of preregistrations, as it reintroduces researcher degrees of freedom and leaves room to revert back to <em>p</em>-hacking strategies.</p>
+</section>
+<section id="are-all-deviations-bad" class="level3">
+<h3 class="anchored" data-anchor-id="are-all-deviations-bad">Are all deviations bad?</h3>
+<p>Deviations from preregistrations occur in all different aspects of the research process, but what is not known is the effect of these deviations. Do changes from original research plans reduce research quality? <span class="citation" data-cites="lakens2024">Lakens (<a href="#ref-lakens2024" role="doc-biblioref">2024</a>)</span> theorized what the possible consequences could be. If deviations occur due to assumptions being violated or data no longer being suitable for the planned analysis, then deviating from the original research plan can have positive effects on the validity of a test. Similarly, adding additional analyses can increase the robustness. On the other hand, changes in testing also mean that a hypothesis is generally less “severely” tested. This means that a theory has not been given the proper opportunity to be falsified which can result in higher type II errors. Consequently, little can be said about whether deviations are bad, especially when the reason for the deviation is unknown.</p>
+<p>There is no clear consensus on whether inconsistencies between preregistrations and final publications are a problem. When asked, researchers deemed deviations to be problematic to varying degrees <span class="citation" data-cites="willroth2024">(<a href="#ref-willroth2024" role="doc-biblioref">Willroth &amp; Atherton, 2024</a>)</span>. Changes to analyses and hypotheses were considered the least acceptable, whereas changing research platforms or software were deemed relatively justifiable. Whether the deviation was reported transparently and the estimated impact on the results of the study were also taken into consideration. To summarize, even though deviations from preregistration are common, an clear conclusion on their effects is still missing.</p>
+</section>
+<section id="the-present-project" class="level3">
+<h3 class="anchored" data-anchor-id="the-present-project">The present project</h3>
+<p>With this simulation study, I intend to close this gap in the literature and explore the effects of typical preregistration deviations on research outcomes and the quality of published results. Specifically, I aim to answer the question: ‘How do deviations from preregistrations affect type I and type II error rates?’ The effect of deviations is studied in three domains: sample size, outlier exclusion criteria, and the statistical model. Different deviations are simulated in each domain and compared to a baseline condition without deviations. This research question is investigated in the context of behavioral psychology and uses a linear regression as the model of interest. The effects are examined across two scenarios: a no-effect scenario, and an effect scenario, in which the main effect parameter is changed. The aim of this study is descriptive and therefore no specific hypotheses are formulated.</p>
+<p>As a potential secondary goal, I hope to address the issue of reasons for deviations being unknown. The reason behind a deviation is important for assessing its effect. A researcher being forced to deviate due to circumstance is very different from a researcher <em>choosing</em> to deviate. When a researcher chooses to deviate, this could be because they are picking the results they prefer. Initially, the deviation conditions are simulated and the outcomes are used to assess type I and type II error as compared to the baseline condition. In the second phase, deviations are simulated but the outcomes are selectively chosen from either the baseline or the deviation condition, based on which condition has the better <em>p</em>-value. This is done in order to proxy the opportunistic selection of results by the researcher.</p>
+<p>With these simulations I hope to shed light on the effect of deviations from preregistration on type I and type II errors, as well as the effect of picking deviations opportunistically.</p>
+</section>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="conditions" class="level3">
+<h3 class="anchored" data-anchor-id="conditions">Conditions</h3>
+<p>I reviewed which deviations to investigate by (1) how common they are, (2) their potential impact and (3) their justifiability. Based on this I chose deviations in the following domains: sample size, outlier exclusion criteria, and statistical model. Within the three chosen domains, multiple conditions are simulated and compared to a baseline condition without any deviations.</p>
+<section id="sample-size" class="level4">
+<h4 class="anchored" data-anchor-id="sample-size">Sample size</h4>
+<p>Deviations in the sample size are some of the most common deviations, with consistency between preregistrations and published papers only being 28% for the exact sample size <span class="citation" data-cites="vandenakker2024">(<a href="#ref-vandenakker2024" role="doc-biblioref">van den Akker, Bakker, et al., 2024</a>)</span>. Changing the sample size can inflate type II error (by decreasing power) as well as the type I error <span class="citation" data-cites="lakens2024 simmons2011">(<a href="#ref-lakens2024" role="doc-biblioref">Lakens, 2024</a>; <a href="#ref-simmons2011" role="doc-biblioref">Simmons et al., 2011</a>)</span>. Small deviations in sample size are common and often due to factors outside of the researcher’s agency. Researchers also admit to stopping collection earlier or continuing collection longer after finding disappointing results <span class="citation" data-cites="john2012">(<a href="#ref-john2012" role="doc-biblioref">John et al., 2012</a>)</span>. However, it is unknown how often this is also used as a reason to deviate from preregistrations. Based on this, the conditions in <a href="#tbl-cond" class="quarto-xref">Table&nbsp;1</a> are simulated within the sample size domain.</p>
+</section>
+<section id="outlier-exclusion-criteria" class="level4">
+<h4 class="anchored" data-anchor-id="outlier-exclusion-criteria">Outlier exclusion criteria</h4>
+<p>Literature shows that over half of published papers do not adhere to their pre-specified outlier exclusion criteria <span class="citation" data-cites="vandenakker2024 claesen2021">(<a href="#ref-claesen2021" role="doc-biblioref">Claesen et al., 2021</a>; <a href="#ref-vandenakker2024" role="doc-biblioref">van den Akker, Bakker, et al., 2024</a>)</span>. Vague or missing criteria in preregistrations make it harder to assess deviations and leave a lot of room for interpretation and ad hoc decisions <span class="citation" data-cites="heirene2024">(<a href="#ref-heirene2024" role="doc-biblioref">Heirene et al., 2024</a>)</span>. This could potentially lead researchers to choose how to exclude outliers based on which method provides better results. Researchers themselves, however, deem outlier deviations to be relatively acceptable <span class="citation" data-cites="willroth2024">(<a href="#ref-willroth2024" role="doc-biblioref">Willroth &amp; Atherton, 2024</a>)</span>.</p>
+<p><span class="citation" data-cites="lakens2024">Lakens (<a href="#ref-lakens2024" role="doc-biblioref">2024</a>)</span> argues that adding additional exclusion criteria can undermine the severity of a test. This idea is corroborated by <span class="citation" data-cites="stefan2023">Stefan &amp; Schönbrodt (<a href="#ref-stefan2023" role="doc-biblioref">2023</a>)</span>, who showed that the type I error increases linearly with the number of outlier detection methods used. Furthermore, 38% of researchers admit to excluding outliers only after examining their impact on the data <span class="citation" data-cites="john2012">(<a href="#ref-john2012" role="doc-biblioref">John et al., 2012</a>)</span>. If this is also the reason why many people deviate from their preregistered outlier criteria, then these deviations are important.</p>
+<p>The most common method for identifying outliers in the social sciences is the <em>z</em>-score <span class="citation" data-cites="bakker2014 leys2013">(<a href="#ref-bakker2014" role="doc-biblioref">Bakker &amp; Wicherts, 2014</a>; <a href="#ref-leys2013" role="doc-biblioref">Leys et al., 2013</a>)</span>. A minimum of three standard deviations from the mean is often maintained as the rule of thumb for excluding cases. Within linear regression, outliers are also often identified based on their influence, commonly using Cook’s distance. Cook’s distance excludes outliers based on how much their exclusion would influence the regression coefficients. In this study, the baseline condition will be to not exclude any datapoints, with deviation conditions based on <em>z</em>-score and Cook’s distance (<a href="#tbl-cond" class="quarto-xref">Table&nbsp;1</a>).</p>
+</section>
+<section id="statistical-model" class="level4">
+<h4 class="anchored" data-anchor-id="statistical-model">Statistical model</h4>
+<p>Amongst all of the aforementioned domains, the least is known about why people deviate from their preregistered statistical model. “Statistical model” is a very broad domain and includes many types of deviations, such as changes in the dependent variable, independent variable, statistical inference criteria and the actual statistical test. In this paper, “statistical model” refers to the above-mentioned types of changes, not only the statistical test and its specifications.</p>
+<p>The broadness of the domain also means that deviations within the domain have been investigated from multiple angles. <span class="citation" data-cites="claesen2021">Claesen et al. (<a href="#ref-claesen2021" role="doc-biblioref">2021</a>)</span> found a deviation rate of 70% within the “analysis” domain, including deviations like examining additional effects, changing which model is tested and performing unregistered robustness checks. The majority of these deviations went unreported. Another study reported inconsistencies in 40% of the statistical models, deviations included the specifications of the variables, which model was tested and how variables were used <span class="citation" data-cites="vandenakker2024">(<a href="#ref-vandenakker2024" role="doc-biblioref">van den Akker, Bakker, et al., 2024</a>)</span>.</p>
+<p>As <span class="citation" data-cites="lakens2024">Lakens (<a href="#ref-lakens2024" role="doc-biblioref">2024</a>)</span> argues, at times it might be necessary to alter the statistical model. This could happen when a variable has been measured at a different level than expected or a test assumption has been violated. However, changing the statistical model can also be done opportunistically. Choosing to add an extra dependent variable because results are not yet satisfying can increase the type I error rate to 9.5%, and the addition of a covariate can increase it to 11.7% <span class="citation" data-cites="simmons2011">(<a href="#ref-simmons2011" role="doc-biblioref">Simmons et al., 2011</a>)</span>. The reasoning behind the change thus becomes very important. Therefore, deviations due to failing to properly specify how variables would be operationalized in the preregistration are also seen as a larger shortcoming than model deviations due to unforeseen consequences <span class="citation" data-cites="willroth2024">(<a href="#ref-willroth2024" role="doc-biblioref">Willroth &amp; Atherton, 2024</a>)</span>. Within the statistical model, three deviation conditions are simulated: outcome switching, adding a continuous covariate, and adding a dichotomous covariate (<a href="#tbl-cond" class="quarto-xref">Table&nbsp;1</a>).</p>
+<!-- reasons to compare only nested models perhaps to maintain same estimands and performance measures  -->
+<div id="tbl-cond" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cond-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Parameter Values for Baseline Condition and Deviation Conditions per Domain
+</figcaption>
+<div aria-describedby="tbl-cond-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 22%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Domain</th>
+<th>Baseline condition</th>
+<th>Deviations conditions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sample size</td>
+<td>200</td>
+<td>+5</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>+30</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>-5</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>-30</td>
+</tr>
+<tr class="odd">
+<td>Outlier exclusion criteria</td>
+<td>No outliers excluded</td>
+<td>Exclusion based on <em>z</em>-scores</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>Exclusion based on Cook’s distance</td>
+</tr>
+<tr class="odd">
+<td>Statistical methods: <em>covariates</em></td>
+<td>No covariates</td>
+<td><p>Continuous covariate</p>
+<p>Dichotomous covariate</p></td>
+</tr>
+<tr class="even">
+<td>Statistical methods: <em>outcome switching</em></td>
+<td>Y</td>
+<td>Ya</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+</section>
+<section id="data-generating-mechanism" class="level3">
+<h3 class="anchored" data-anchor-id="data-generating-mechanism">Data-generating mechanism</h3>
+<p>Data is generated under two scenarios: “X has an effect on Y” and “X has no effect on Y”. The only difference in data generation between the two scenarios is in the main effect parameter, <span class="math inline">\(\beta_1\)</span>. In the effect scenario, <span class="math inline">\(\beta_1\)</span> is 0.3, and in the no effect scenario, <span class="math inline">\(\beta_1\)</span> is 0. In the baseline condition, the statistical model is defined as <span class="math display">\[
+Y = \beta_0 + \beta_1X + \epsilon,
+\]</span> where <span class="math inline">\(Y\)</span> is the dependent variable, <span class="math inline">\(\beta_0\)</span> the intercept, <span class="math inline">\(\beta_1\)</span> the main effect, and <span class="math inline">\(\epsilon\)</span> the random error.</p>
+<p>The population parameter values are presented in <a href="#tbl-DGM" class="quarto-xref">Table&nbsp;2</a>, together with the parameter values for the deviation conditions. The complete data-generating model is defined as</p>
+<p><span class="math display">\[
+\begin{aligned}
+Y =  \beta_0 + \beta_1X + \beta_2Z + \beta_3D + \epsilon,\\
+Y_a =  Y + \epsilon_a,
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(Z\)</span> and <span class="math inline">\(D\)</span> represent a continuous and categorical covariate (respectively) and <span class="math inline">\(Y_a\)</span> represents an alternative outcome variable based on <span class="math inline">\(Y\)</span> with additional error <span class="math inline">\(\epsilon_a\)</span>.</p>
+<p>As mentioned, data is generated under two scenarios: an effect scenario and a no-effect scenario. The only difference in data generation between the two scenarios is in the main effect parameter, <span class="math inline">\(\beta_1\)</span>. In the effect scenario, <span class="math inline">\(\beta_1\)</span> is 0.3, and in the no-effect scenario, <span class="math inline">\(\beta_1\)</span> is 0.</p>
+<p>In order to assess differences between outlier exclusion criteria, the data needs to include outliers. These are simulated by generating 5% of the data with increased or decreased values for <span class="math inline">\(\epsilon\)</span>.</p>
+<div id="tbl-DGM" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-DGM-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Parameter Values for the Data generating mechanism
+</figcaption>
+<div aria-describedby="tbl-DGM-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept</td>
+<td><span class="math inline">\(\beta_0 = 0\)</span></td>
+</tr>
+<tr class="even">
+<td>Regression coefficient</td>
+<td><span class="math inline">\(\beta_1 = 0\)</span> or <span class="math inline">\(\beta_1 = 0.30\)</span></td>
+</tr>
+<tr class="odd">
+<td>Independent variable</td>
+<td><span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span></td>
+</tr>
+<tr class="even">
+<td>Random error</td>
+<td><span class="math inline">\(95\% = \epsilon \sim \mathcal{N}(0, 1)\)</span></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(2.5\% = \epsilon \sim \mathcal{N}(-2, 1)\)</span>*</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(2.5\% = \epsilon \sim \mathcal{N}(2, 1)\)</span>*</td>
+</tr>
+<tr class="odd">
+<td>Continuous covariate regression coefficient</td>
+<td><span class="math inline">\(\beta_2 = 0.10\)</span></td>
+</tr>
+<tr class="even">
+<td>Continuous demographic variable</td>
+<td><span class="math inline">\(Z \sim \mathcal{N}(\mu, \sigma^2)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Dichotomous covariate regression coefficient</td>
+<td><span class="math inline">\(\beta_3 = 0.10\)</span></td>
+</tr>
+<tr class="even">
+<td>Dichotomous demographic variable</td>
+<td><span class="math inline">\(D \sim \text{Bernoulli}(0.5)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Alternative outcome error</td>
+<td><span class="math inline">\(\epsilon_a \sim \mathcal{N}(\mu, \sigma^2)\)</span></td>
+</tr>
+<tr class="even">
+<td>Sample size</td>
+<td><span class="math inline">\(200\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>*Specific value of epsilon to be determined</p>
+</section>
+<section id="estimands" class="level3">
+<h3 class="anchored" data-anchor-id="estimands">Estimands</h3>
+<p>The estimand of this study is <span class="math inline">\(\beta_1,\)</span> which represents the effect of the independent variable <span class="math inline">\(X\)</span> on dependent variable <span class="math inline">\(Y\)</span>. The coefficient is estimated using the <code>stats</code> package in <code>R</code> <span class="citation" data-cites="rcoreteam2024">(<a href="#ref-rcoreteam2024" role="doc-biblioref">R Core Team, 2024</a>)</span>, under the baseline and deviation conditions.</p>
+</section>
+<section id="methods-1" class="level3">
+<h3 class="anchored" data-anchor-id="methods-1">Methods</h3>
+<p>As previously mentioned, there are two scenarios under which data is generated. A no-effect scenario and an effect scenario. Within these scenarios each simulated data set is examined under different conditions. The conditions include a baseline condition, with no deviations, and one condition for each possible deviation (<a href="#tbl-cond" class="quarto-xref">Table&nbsp;1</a>).</p>
+<p>In phase 1, the type I and type II error rates are compared between the baseline result and each deviation result. In phase 2, the effect of choosing whether or not to deviate is examined. This is done by simulating each deviation again, but instead of automatically reporting the deviation result, a choice is made. In each iteration the <em>p</em>-values of the deviation result and baseline result are compared, the most desired <em>p</em>-value is reported as the outcome for the deviation condition. The error rates will then be compared between the baseline results and the best values result. An overview can be found in <a href="#fig-phases" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<div style="page-break-after: always;"></div>
+<div id="fig-phases" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-phases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Condition Comparisons
+</figcaption>
+<div aria-describedby="fig-phases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Visuals/phases.png" class="img-fluid figure-img">
+</div>
+</figure>
+</div>
+<p><em>Note.</em> This figure illustrates the study phases. In phase 1, the baseline result is compared to the deviation result. In phase 2, the baseline result is compared to the best result.</p>
+</section>
+<section id="performance-measures" class="level3">
+<h3 class="anchored" data-anchor-id="performance-measures">Performance measures</h3>
+<p>Performance is assessed through the type I and type II error for the estimand <span class="math inline">\(\beta_1.\)</span> Specifically, the regression coefficient itself, the <em>p</em>-value (for decision making in phase 2) and the confidence interval (to assess coverage) are collected for each condition in each iteration.</p>
+<p>The type I error refers to a false-positive, or rejecting the null-hypothesis when it is true. In this study that would mean detecting an effect in the no-effect scenario. Type I error is generally acceptable at a rate of 5% or below, based on an alpha level of .05. In this case, a rate of higher than 5% is considered an inflated type I error rate.</p>
+<p>Type II error refers to a false negative, or failing to reject the null-hypothesis when it is false. In this study that would mean failing to detect an effect in the effect scenario. Type II error is commonly assessed in the form of power. Power is <span class="math inline">\(1-\beta\)</span>, where <span class="math inline">\(\beta\)</span> is the type II error. The nominal type II error rate of .20 results in a generally accepted power level of 80%. Consequently, in this study, power rates of below 80% are considered an inflated type II error rate.</p>
+<!-- ## Results -->
+<!-- -   include what I expect results to look like -->
+<!-- ## Discussion -->
+<!-- -   limitation of specific field -->
+<!-- -   what does this research say about the field and what has been published till now -->
+<!-- -   how do we keep the field reliable? which deviations should we try to avoid and which ones do not seem to matter much? -->
+<!-- -   hypotheses so many deviations, could be concern but outside of this scope -->
+<!-- ## Conclusion -->
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="references" class="level2 unnumbered">
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-bakker2014" class="csl-entry" role="listitem">
+Bakker, M., &amp; Wicherts, J. M. (2014). Outlier <span>Removal</span> and the <span>Relation</span> with <span>Reporting Errors</span> and <span>Quality</span> of <span>Psychological Research</span>. <em>PLOS ONE</em>, <em>9</em>(7), e103360. <a href="https://doi.org/10.1371/journal.pone.0103360">https://doi.org/10.1371/journal.pone.0103360</a>
+</div>
+<div id="ref-brodeur2024" class="csl-entry" role="listitem">
+Brodeur, A., Cook, N. M., Hartley, J. S., &amp; Heyes, A. (2024). Do <span>Preregistration</span> and <span>Preanalysis Plans Reduce</span> <span><em>p</em></span> -<span>Hacking</span> and <span>Publication Bias</span>? <span>Evidence</span> from 15,992 <span>Test Statistics</span> and <span>Suggestions</span> for <span>Improvement</span>. <em>Journal of Political Economy Microeconomics</em>, <em>2</em>(3), 527–561. <a href="https://doi.org/10.1086/730455">https://doi.org/10.1086/730455</a>
+</div>
+<div id="ref-claesen2021" class="csl-entry" role="listitem">
+Claesen, A., Gomes, S., Tuerlinckx, F., &amp; Vanpaemel, W. (2021). Comparing dream to reality: An assessment of adherence of the first generation of preregistered studies. <em>Royal Society Open Science</em>, <em>8</em>(10), 211037. <a href="https://doi.org/10.1098/rsos.211037">https://doi.org/10.1098/rsos.211037</a>
+</div>
+<div id="ref-ferguson2023" class="csl-entry" role="listitem">
+Ferguson, J., Littman, R., Christensen, G., Paluck, E. L., Swanson, N., Wang, Z., Miguel, E., Birke, D., &amp; Pezzuto, J.-H. (2023). Survey of open science practices and attitudes in the social sciences. <em>Nature Communications</em>, <em>14</em>(1), 5401. <a href="https://doi.org/10.1038/s41467-023-41111-1">https://doi.org/10.1038/s41467-023-41111-1</a>
+</div>
+<div id="ref-heirene2024" class="csl-entry" role="listitem">
+Heirene, R., LaPlante, D., Louderback, E., Keen, B., Bakker, M., Serafimovska, A., &amp; Gainsbury, S. (2024). Preregistration specificity and adherence: <span>A</span> review of preregistered gambling studies and cross-disciplinary comparison. <em>Meta-Psychology</em>, <em>8</em>. <a href="https://doi.org/10.15626/MP.2021.2909">https://doi.org/10.15626/MP.2021.2909</a>
+</div>
+<div id="ref-john2012" class="csl-entry" role="listitem">
+John, L. K., Loewenstein, G., &amp; Prelec, D. (2012). Measuring the <span>Prevalence</span> of <span>Questionable Research Practices With Incentives</span> for <span>Truth Telling</span>. <em>Psychological Science</em>, <em>23</em>(5), 524–532. <a href="https://doi.org/10.1177/0956797611430953">https://doi.org/10.1177/0956797611430953</a>
+</div>
+<div id="ref-lakens2019" class="csl-entry" role="listitem">
+Lakens, D. (2019). <em>The <span>Value</span> of <span>Preregistration</span> for <span>Psychological Science</span>: <span>A Conceptual Analysis</span></em>. PsyArXiv. <a href="https://doi.org/10.31234/osf.io/jbh4w">https://doi.org/10.31234/osf.io/jbh4w</a>
+</div>
+<div id="ref-lakens2024" class="csl-entry" role="listitem">
+Lakens, D. (2024). When and <span>How</span> to <span>Deviate From</span> a <span>Preregistration</span>. <em>Collabra: Psychology</em>, <em>10</em>(1), 117094. <a href="https://doi.org/10.1525/collabra.117094">https://doi.org/10.1525/collabra.117094</a>
+</div>
+<div id="ref-leys2013" class="csl-entry" role="listitem">
+Leys, C., Ley, C., Klein, O., Bernard, P., &amp; Licata, L. (2013). Detecting outliers: <span>Do</span> not use standard deviation around the mean, use absolute deviation around the median. <em>Journal of Experimental Social Psychology</em>, <em>49</em>(4), 764–766. <a href="https://doi.org/10.1016/j.jesp.2013.03.013">https://doi.org/10.1016/j.jesp.2013.03.013</a>
+</div>
+<div id="ref-lindsay2018" class="csl-entry" role="listitem">
+Lindsay, S. D., Nosek, B. A., &amp; Stephen, D. (2018). Preregistration <span>Becoming</span> the <span>Norm</span> in <span>Psychological Science</span>. <em>APS Observer</em>, <em>31</em>.
+</div>
+<div id="ref-nosek2018" class="csl-entry" role="listitem">
+Nosek, B. A., Ebersole, C. R., DeHaven, A. C., &amp; Mellor, D. T. (2018). The preregistration revolution. <em>Proceedings of the National Academy of Sciences</em>, <em>115</em>(11), 2600–2606. <a href="https://doi.org/10.1073/pnas.1708274114">https://doi.org/10.1073/pnas.1708274114</a>
+</div>
+<div id="ref-opensciencecollaboration2015" class="csl-entry" role="listitem">
+Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. <em>Science</em>, <em>349</em>(6251), aac4716. <a href="https://doi.org/10.1126/science.aac4716">https://doi.org/10.1126/science.aac4716</a>
+</div>
+<div id="ref-rcoreteam2024" class="csl-entry" role="listitem">
+R Core Team. (2024). <em>R: <span>A Language</span> and <span>Environment</span> for <span>Statistical Computing</span></em>. R Foundation for Statistical Computing.
+</div>
+<div id="ref-simmons2011" class="csl-entry" role="listitem">
+Simmons, J. P., Nelson, L. D., &amp; Simonsohn, U. (2011). False-<span>Positive Psychology</span>: <span>Undisclosed Flexibility</span> in <span>Data Collection</span> and <span>Analysis Allows Presenting Anything</span> as <span>Significant</span>. <em>Psychological Science</em>, <em>22</em>(11), 1359–1366. <a href="https://doi.org/10.1177/0956797611417632">https://doi.org/10.1177/0956797611417632</a>
+</div>
+<div id="ref-stefan2023" class="csl-entry" role="listitem">
+Stefan, A. M., &amp; Schönbrodt, F. D. (2023). <em>Big little lies: A compendium and simulation of p-hacking strategies</em>.
+</div>
+<div id="ref-vandenakker2024" class="csl-entry" role="listitem">
+van den Akker, O. R., Bakker, M., Van Assen, M. A. L. M., Pennington, C. R., Verweij, L., Elsherif, M. M., Claesen, A., Gaillard, S. D. M., Yeung, S. K., Frankenberger, J.-L., Krautter, K., Cockcroft, J. P., Kreuer, K. S., Evans, T. R., Heppel, F. M., Schoch, S. F., Korbmacher, M., Yamada, Y., Albayrak-Aydemir, N., … Wicherts, J. M. (2024). The potential of preregistration in psychology: <span>Assessing</span> preregistration producibility and preregistration-study consistency. <em>Psychological Methods</em>. <a href="https://doi.org/10.1037/met0000687">https://doi.org/10.1037/met0000687</a>
+</div>
+<div id="ref-vandenakker2024a" class="csl-entry" role="listitem">
+van den Akker, O. R., van Assen, M. A. L. M., Bakker, M., Elsherif, M., Wong, T. K., &amp; Wicherts, J. M. (2024). Preregistration in practice: <span>A</span> comparison of preregistered and non-preregistered studies in psychology. <em>Behavior Research Methods</em>, <em>56</em>(6), 5424–5433. <a href="https://doi.org/10.3758/s13428-023-02277-0">https://doi.org/10.3758/s13428-023-02277-0</a>
+</div>
+<div id="ref-wagenmakers2012" class="csl-entry" role="listitem">
+Wagenmakers, E.-J., Wetzels, R., Borsboom, D., van der Maas, H. L. J., &amp; Kievit, R. A. (2012). An <span>Agenda</span> for <span>Purely Confirmatory Research</span>. <em>Perspectives on Psychological Science</em>, <em>7</em>(6), 632–638. <a href="https://doi.org/10.1177/1745691612463078">https://doi.org/10.1177/1745691612463078</a>
+</div>
+<div id="ref-willroth2024" class="csl-entry" role="listitem">
+Willroth, E. C., &amp; Atherton, O. E. (2024). <em>Best <span>Laid Plans</span>: <span>A Guide</span> to <span>Reporting Preregistration Deviations</span></em>.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
