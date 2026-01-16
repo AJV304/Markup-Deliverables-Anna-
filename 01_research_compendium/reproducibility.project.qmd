@@ -34,7 +34,7 @@ Secondly, we import the data. The files should be in the same place, the compend
 
 ```
 
-We will then transform the data.
+We will then transform the data and perform initial descriptive analyses.
 
 ```{r}
 #| label: Transforming data
@@ -61,6 +61,7 @@ And finally, we will display the results graphically.
 ```{r}
 #| label: Creating figures
 #| file: scripts/4.figures.R
+#| echo: false
 #| warning: false
 
 
