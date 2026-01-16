@@ -113,7 +113,11 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
 ## an renv reproducible enviroment
 ```{r}
 #| echo: true
+
+library(here)
 library(renv)
+setwd(here())
+source("renv/activate.R")
 renv::init()
 ```
 

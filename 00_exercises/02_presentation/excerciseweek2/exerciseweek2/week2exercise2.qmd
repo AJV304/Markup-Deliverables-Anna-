@@ -1,0 +1,136 @@
+---
+title: "Topical presentation"
+author: 
+- name: "Anna Jannie Vijlbrief"
+  orcid: "0009-0004-9553-5493"
+
+
+format: 
+  revealjs: 
+    logo: "pansexual.png"
+bibliography: attempt.bib
+---
+
+## From the Iris data
+
+```{r}
+#| fig-align: center
+
+data2 <- iris
+hist(data2$Sepal.Length, col = "lightblue", main = "A centered still figure", xlab = "Sepal Length")
+```
+
+## Moving on with an interactive table
+
+```{r}
+library(DT)
+datatable(iris,
+options = list(
+scrollX = TRUE,
+scrollY = "65vh",
+autoWidth = TRUE)
+)
+```
+
+## A moving figure, *interactive figure* or movie
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+
+library(ggplot2)
+library(plotly)
+
+plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point()
+
+ggplotly(plot)
+
+```
+
+## Icons on a 2-column slide
+
+::::: columns
+::: column
+### [Queer]{style="color: purple;"}
+
+-   Alan Turing
+-   Ian McEwing
+-   Josephine Baker
+:::
+
+::: column
+### [Not Queer]{style="color: darkblue;"}
+
+-   Hozier
+-   Michelle Obama
+:::
+:::::
+
+## Mathematical proof
+
+I will now prove why this relationship made perfect sense.
+
+![](elton.jpg)
+
+## An aligned multi-row equation
+
+This equation is why the previous relationship made perfect sense: 
+
+\newline
+
+\
+\begin{array}{rl}
+ gay + gay = relationship
+\\ straight + straight = relationship \\ \hline
+2(gay) + 2(straight) = 2 (relationship) \\ \hline
+gay + straight = relationship.
+\end{array}
+\
+
+And so Elton John and Renate Blauel were meant to be. 
+
+## A citation and reference list
+\newline
+
+My favorite work of statistical literature is that of Karl Popper [@popper_logic_1959]. The reference list will be at the end.
+
+## R-code, displayed but not executed
+
+```{r}
+#| echo: true
+#| eval: false
+
+2+2
+```
+
+## Cached and labeled r-code (may overlap with the next requirement)
+
+```{r}
+#| cache: true
+#| code-line-numbers: true
+#| label: quick maths
+
+2^3
+
+```
+
+## R-code, executed, but not displayed (e.g. a figure generation)
+
+```{r}
+#| echo: false
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point()
+
+```
+
+## A renv reproducible enviroment
+```{r}
+#| echo: true
+
+library(renv)
+renv::init()
+```
+
+## References {.unnumbered}

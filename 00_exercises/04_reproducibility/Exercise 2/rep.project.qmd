@@ -1,0 +1,104 @@
+---
+title: "My Reproducible Manuscript" 
+author: "Anna. J. Vijlbrief" 
+format: 
+  pdf: default
+editor: visual
+bibliography: references.bib 
+ 
+---
+
+
+
+## Introduction
+
+------------------------------------------------------------------------
+
+The following document is a reproducible version of the [NHANES](https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?Begi-nYear=2015) research project.
+
+## Setting up
+
+------------------------------------------------------------------------
+
+The following packages are required:
+
+```{r}
+#| label: Loading packages
+#| warning: false
+
+
+library(Hmisc)
+library(mice)
+library(tidyverse)
+library(here)
+```
+
+```{r}
+
+getwd()
+here()
+```
+
+## Loading the data
+
+------------------------------------------------------------------------
+
+In this code chunk I will load the data.
+
+```{r}
+#| label: Loading the data
+#| eval: true
+
+source(here("Exercise 2", "scripts", "0.loading.data.R"))
+
+
+```
+
+## Altering the data
+
+------------------------------------------------------------------------
+
+```{r}
+#| label: Shaping the data
+#| eval: true
+
+source(here("Exercise 2", "scripts", "1.reshaping.data.R"))
+
+
+```
+
+## Simulation
+
+------------------------------------------------------------------------
+
+```{r}
+#| label: Simulating the data
+#| echo: false
+#| eval: true
+
+
+source(here("Exercise 2", "scripts", "2.simulation.R"))
+
+
+```
+
+## Creating the visuals
+
+------------------------------------------------------------------------
+
+```{r}
+#| label: Visuals
+#| echo: false
+#| eval: true
+
+source(here("Exercise 2", "scripts", "3.visuals.R"))
+
+```
+
+## Pulling from alternative scripts
+
+------------------------------------------------------------------------
+
+\newpage
+
+## References
