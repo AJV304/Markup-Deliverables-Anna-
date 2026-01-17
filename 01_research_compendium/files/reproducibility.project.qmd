@@ -19,7 +19,7 @@ We begin by loading all the required packages.
 
 ```{r}
 #| label: Loading packages
-#| file: scripts/0.packages.R
+#| file: ../scripts/0.packages.R
 #| warning: false
 
 ```
@@ -28,7 +28,7 @@ Secondly, we import the data. The files should be in the same place, the compend
 
 ```{r}
 #| label: Importing data
-#| file: scripts/1.data.import.R
+#| file: ../scripts/1.data.import.R
 #| warning: false
 #| message: false
 
@@ -39,17 +39,17 @@ We will then transform the data and perform initial descriptive analyses.
 ```{r}
 #| label: Transforming data
 #| warning: false
-#| file: scripts/2.data.transform.R
+#| file: ../scripts/2.data.transform.R
 
 
 
 ```
 
-Continued by the simulation.
+Continued by the simulation, which was done with the following code.
 
 ```{r}
 #| label: Simulating 
-#| file: scripts/3.simulation.R
+#| file: ../scripts/3.simulation.R
 #| warning: false
 #| output: false
 
@@ -60,7 +60,7 @@ And finally, we will display the results graphically.
 
 ```{r}
 #| label: Creating figures
-#| file: scripts/4.figures.R
+#| file: ../scripts/4.figures.R
 #| echo: false
 #| warning: false
 

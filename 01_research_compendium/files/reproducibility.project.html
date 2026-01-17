@@ -125,37 +125,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Raw data importation</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">&lt;-</span> <span class="fu">sasxport.get</span>(<span class="st">"data/DEMO_I.xpt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#importing the data</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">&lt;-</span> <span class="fu">sasxport.get</span>(<span class="st">"../data/DEMO_I.xpt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Processing SAS dataset DEMO_I    ..</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span> <span class="fu">sasxport.get</span>(<span class="st">"data/BPX_I.xpt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span> <span class="fu">sasxport.get</span>(<span class="st">"../data/BPX_I.xpt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Processing SAS dataset BPX_I     ..</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>d3 <span class="ot">&lt;-</span> <span class="fu">sasxport.get</span>(<span class="st">"data/BMX_I.xpt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>d3 <span class="ot">&lt;-</span> <span class="fu">sasxport.get</span>(<span class="st">"../data/BMX_I.xpt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Processing SAS dataset BMX_I     ..</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>d4 <span class="ot">&lt;-</span> <span class="fu">sasxport.get</span>(<span class="st">"data/GHB_I.xpt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>d4 <span class="ot">&lt;-</span> <span class="fu">sasxport.get</span>(<span class="st">"../data/GHB_I.xpt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Processing SAS dataset GHB_I     ..</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>d5 <span class="ot">&lt;-</span> <span class="fu">sasxport.get</span>(<span class="st">"data/TCHOL_I.xpt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>d5 <span class="ot">&lt;-</span> <span class="fu">sasxport.get</span>(<span class="st">"../data/TCHOL_I.xpt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Processing SAS dataset TCHOL_I   ..</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>d1.t <span class="ot">&lt;-</span> <span class="fu">subset</span>(d1,<span class="at">select=</span><span class="fu">c</span>(<span class="st">"seqn"</span>,<span class="st">"riagendr"</span>,<span class="st">"ridageyr"</span>))</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>d2.t <span class="ot">&lt;-</span> <span class="fu">subset</span>(d2,<span class="at">select=</span><span class="fu">c</span>(<span class="st">"seqn"</span>,<span class="st">"bpxsy1"</span>))</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>d3.t <span class="ot">&lt;-</span> <span class="fu">subset</span>(d3,<span class="at">select=</span><span class="fu">c</span>(<span class="st">"seqn"</span>,<span class="st">"bmxbmi"</span>))</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>d4.t <span class="ot">&lt;-</span> <span class="fu">subset</span>(d4,<span class="at">select=</span><span class="fu">c</span>(<span class="st">"seqn"</span>,<span class="st">"lbxgh"</span>))</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>d5.t <span class="ot">&lt;-</span> <span class="fu">subset</span>(d5,<span class="at">select=</span><span class="fu">c</span>(<span class="st">"seqn"</span>,<span class="st">"lbdtcsi"</span>))</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">merge</span>(d1.t,d2.t)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">merge</span>(d,d3.t)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">merge</span>(d,d4.t)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">merge</span>(d,d5.t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#subsetting the data </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>d1.t <span class="ot">&lt;-</span> <span class="fu">subset</span>(d1,<span class="at">select=</span><span class="fu">c</span>(<span class="st">"seqn"</span>,<span class="st">"riagendr"</span>,<span class="st">"ridageyr"</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>d2.t <span class="ot">&lt;-</span> <span class="fu">subset</span>(d2,<span class="at">select=</span><span class="fu">c</span>(<span class="st">"seqn"</span>,<span class="st">"bpxsy1"</span>))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>d3.t <span class="ot">&lt;-</span> <span class="fu">subset</span>(d3,<span class="at">select=</span><span class="fu">c</span>(<span class="st">"seqn"</span>,<span class="st">"bmxbmi"</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>d4.t <span class="ot">&lt;-</span> <span class="fu">subset</span>(d4,<span class="at">select=</span><span class="fu">c</span>(<span class="st">"seqn"</span>,<span class="st">"lbxgh"</span>))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>d5.t <span class="ot">&lt;-</span> <span class="fu">subset</span>(d5,<span class="at">select=</span><span class="fu">c</span>(<span class="st">"seqn"</span>,<span class="st">"lbdtcsi"</span>))</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#merging the subsetted data</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">merge</span>(d1.t,d2.t)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">merge</span>(d,d3.t)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">merge</span>(d,d4.t)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">merge</span>(d,d5.t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We will then transform the data.</p>
+<p>We will then transform the data and perform initial descriptive analyses.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Data transformations &amp; descriptives</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ====================================================================</span></span>
@@ -252,54 +256,37 @@ as.factor(sex)2 -4.5143014 -2.7479929</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ====================================================================</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Continued by the simulation.</p>
+<p>Continued by the simulation, which was done with the following code.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Simulation</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># simulation of measurement error:</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>ref <span class="ot">&lt;-</span> <span class="fu">lm</span>(bp <span class="sc">~</span> HbA1C <span class="sc">+</span> bmi <span class="sc">+</span> age <span class="sc">+</span> <span class="fu">as.factor</span>(sex), <span class="at">data=</span>dc)<span class="sc">$</span>coef[<span class="dv">2</span>]</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>n.sim <span class="ot">&lt;-</span> <span class="fl">1e3</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>perc.me.exp <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,.<span class="dv">5</span>,.<span class="dv">1</span>)</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>perc.me.conf<span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,.<span class="dv">5</span>,.<span class="dv">1</span>)</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>scenarios <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(perc.me.exp,perc.me.conf)</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>var.exp <span class="ot">&lt;-</span> <span class="fu">var</span>(dc<span class="sc">$</span>HbA1C)</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>var.conf <span class="ot">&lt;-</span> <span class="fu">var</span>(dc<span class="sc">$</span>bmi)</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">dim</span>(dc)[<span class="dv">1</span>]</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>beta.hat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">ncol=</span><span class="fu">dim</span>(scenarios)[<span class="dv">1</span>], <span class="at">nrow=</span>n.sim)</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n.sim){</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(k)</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(k)</span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(scenarios)[<span class="dv">1</span>]){</span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>    var.me.exp <span class="ot">&lt;-</span> var.exp<span class="sc">*</span>scenarios[i,<span class="dv">1</span>]<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>scenarios[i,<span class="dv">1</span>])</span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>    var.me.conf <span class="ot">&lt;-</span> var.conf<span class="sc">*</span>scenarios[i,<span class="dv">2</span>]<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>scenarios[i,<span class="dv">2</span>])</span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    dc<span class="sc">$</span>HbA1C.me <span class="ot">&lt;-</span> dc<span class="sc">$</span>HbA1C <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">dim</span>(dc)[<span class="dv">1</span>], <span class="dv">0</span>, <span class="fu">sqrt</span>(var.me.exp) )</span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>    dc<span class="sc">$</span>bmi.me <span class="ot">&lt;-</span> dc<span class="sc">$</span>bmi <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">dim</span>(dc)[<span class="dv">1</span>], <span class="dv">0</span>, <span class="fu">sqrt</span>(var.me.conf) )</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    beta.hat[k,i] <span class="ot">&lt;-</span> <span class="fu">lm</span>(bp <span class="sc">~</span> HbA1C.me <span class="sc">+</span> age <span class="sc">+</span> bmi.me <span class="sc">+</span> <span class="fu">as.factor</span>(sex), <span class="at">data=</span>dc)<span class="sc">$</span>coef[<span class="dv">2</span>]</span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">#setting values</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>ref <span class="ot">&lt;-</span> <span class="fu">lm</span>(bp <span class="sc">~</span> HbA1C <span class="sc">+</span> bmi <span class="sc">+</span> age <span class="sc">+</span> <span class="fu">as.factor</span>(sex), <span class="at">data=</span>dc)<span class="sc">$</span>coef[<span class="dv">2</span>]</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>n.sim <span class="ot">&lt;-</span> <span class="fl">1e3</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>perc.me.exp <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,.<span class="dv">5</span>,.<span class="dv">1</span>)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>perc.me.conf<span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,.<span class="dv">5</span>,.<span class="dv">1</span>)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>scenarios <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(perc.me.exp,perc.me.conf)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>var.exp <span class="ot">&lt;-</span> <span class="fu">var</span>(dc<span class="sc">$</span>HbA1C)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>var.conf <span class="ot">&lt;-</span> <span class="fu">var</span>(dc<span class="sc">$</span>bmi)</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">dim</span>(dc)[<span class="dv">1</span>]</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>beta.hat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">ncol=</span><span class="fu">dim</span>(scenarios)[<span class="dv">1</span>], <span class="at">nrow=</span>n.sim)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="co">#running forloop</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n.sim){</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(k)</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(k)</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(scenarios)[<span class="dv">1</span>]){</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    var.me.exp <span class="ot">&lt;-</span> var.exp<span class="sc">*</span>scenarios[i,<span class="dv">1</span>]<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>scenarios[i,<span class="dv">1</span>])</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>    var.me.conf <span class="ot">&lt;-</span> var.conf<span class="sc">*</span>scenarios[i,<span class="dv">2</span>]<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>scenarios[i,<span class="dv">2</span>])</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>    dc<span class="sc">$</span>HbA1C.me <span class="ot">&lt;-</span> dc<span class="sc">$</span>HbA1C <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">dim</span>(dc)[<span class="dv">1</span>], <span class="dv">0</span>, <span class="fu">sqrt</span>(var.me.exp) )</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>    dc<span class="sc">$</span>bmi.me <span class="ot">&lt;-</span> dc<span class="sc">$</span>bmi <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">dim</span>(dc)[<span class="dv">1</span>], <span class="dv">0</span>, <span class="fu">sqrt</span>(var.me.conf) )</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>    beta.hat[k,i] <span class="ot">&lt;-</span> <span class="fu">lm</span>(bp <span class="sc">~</span> HbA1C.me <span class="sc">+</span> age <span class="sc">+</span> bmi.me <span class="sc">+</span> <span class="fu">as.factor</span>(sex), <span class="at">data=</span>dc)<span class="sc">$</span>coef[<span class="dv">2</span>]</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>  }}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And finally, we will display the results graphically.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Figures</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>tot.mat <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">100</span><span class="sc">*</span>scenarios,<span class="fu">apply</span>(beta.hat,<span class="dv">2</span>,mean))</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tot.mat) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"me.exp"</span>,<span class="st">"me.conf"</span>,<span class="st">"estimate"</span>)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>FIGURE <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(tot.mat, <span class="fu">aes</span>(me.exp, me.conf)) <span class="sc">+</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color=</span><span class="st">"white"</span>,<span class="fu">aes</span>(<span class="at">fill =</span> estimate)) <span class="sc">+</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(estimate, <span class="dv">2</span>))) <span class="sc">+</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low=</span><span class="st">"#D55E00"</span>,<span class="at">mid=</span><span class="st">"white"</span>,<span class="at">high =</span> <span class="st">"#56B4E9"</span>, <span class="at">midpoint=</span>ref) <span class="sc">+</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="fu">paste</span>(<span class="st">"% of total variance of HbA1c due to measurement error"</span>),</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="fu">paste</span>(<span class="st">"% of total variance of BMI due to measurement error"</span>)) <span class="sc">+</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>()<span class="sc">+</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">unique</span>(tot.mat[,<span class="dv">1</span>]))<span class="sc">+</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">unique</span>(tot.mat[,<span class="dv">1</span>]))<span class="sc">+</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill=</span><span class="st">'white'</span>, <span class="at">colour=</span><span class="st">'grey'</span>),</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">hjust=</span><span class="dv">0</span>),</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>),</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>),</span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>),</span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>))</span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>FIGURE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">

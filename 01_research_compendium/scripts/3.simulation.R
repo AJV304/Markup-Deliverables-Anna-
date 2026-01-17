@@ -1,6 +1,8 @@
 #Simulation
 
 # simulation of measurement error:
+
+#setting values
 ref <- lm(bp ~ HbA1C + bmi + age + as.factor(sex), data=dc)$coef[2]
 n.sim <- 1e3
 perc.me.exp <- seq(0,.5,.1)
@@ -10,6 +12,8 @@ var.exp <- var(dc$HbA1C)
 var.conf <- var(dc$bmi)
 n <- dim(dc)[1]
 beta.hat <- matrix(ncol=dim(scenarios)[1], nrow=n.sim)
+
+#running forloop
 for (k in 1:n.sim){
   print(k)
   set.seed(k)
