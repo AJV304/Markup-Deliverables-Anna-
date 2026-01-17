@@ -9,6 +9,9 @@ data3 <- read.csv("titanic.csv")
 # create user interface
 ui <- fluidPage(
   
+  # browser tab title
+  title = "Shiny App about the Titanic!",
+  
     #title
     titlePanel(
       h1("Anna's Shiny App about The Titanic!", align = "center")),
@@ -17,11 +20,12 @@ ui <- fluidPage(
     br(),
     
     #top part with image and text
+    #create space for the content
     fluidRow(
-      column(7,
-            img(src = "titanic.jpg", style = "width:100%; height:auto;")),
-      column(5,
-             style = "font-size:15px;",
+      column(7,                                                            #have the image be 7/12ths of the width
+            img(src = "titanic.jpg", style = "width:100%; height:auto;")), #specify image style
+      column(5,                                                            #have the text be 5/12ths of the width
+             style = "font-size:15px;",                                    #specify font size
              "On this website you can explore data from the famous ship Titanic. The Titanic sank in 1912, after crashing into an iceberg. It is estimated that over 2/3 of the passengers aboard the ship died. This tragedy drew lots of attention and remains a common pop-culture reference to this day.",
              tags$sup(tags$a("1", href = "https://en.wikipedia.org/wiki/RMS_Titanic", target = "_blank")),
              br(),
@@ -44,21 +48,26 @@ ui <- fluidPage(
     #how to display input and output
     sidebarLayout(
       #input
-      sidebarPanel(tags$style(".well {background-color:#daf4f0;}"),
-                   div(style = "font-size:18px;" , "Select your desired parameter values:"),
+      sidebarPanel(tags$style(".well {background-color:#daf4f0;}"),                             #specify color of choice panel
+                   div(style = "font-size:18px;" , "Select your desired parameter values:"),    #font and text above input
                    br(),
                    br(),
-                   sliderInput("age", "Age", min = 0, max = 90, value = c(20, 50), post = " years"),
+                   #input for age
+                   sliderInput("age", "Age", min = 0, max = 90, value = c(20, 50), post = " years"), 
                    br(),
-                   selectInput("class", "Travel class", choices = c("1", "2", "3"), multiple = TRUE, selected = c("1", "2", "3")),
+                   #input for travel class
+                   selectInput("class", "Travel class", choices = c("1", "2", "3"), multiple = TRUE, selected = c("1", "2", "3")), 
                    br(),
-                   checkboxInput("survival", "Group based on survival?", value = FALSE)),
+                   #input for grouping variable
+                   checkboxInput("survival", "Group based on survival?", value = FALSE)), 
       #output
-      mainPanel(plotOutput("scatterplot"),
+      mainPanel(plotOutput("scatterplot"), #request scatterplot as output
                 br(),
                 br(),
                 div(
-                style = "margin-left: auto; margin-right: auto; width: fit-content;",
+                #putting plot in the right place
+                style = "margin-left: auto; margin-right: auto; width: fit-content;", 
+                #request table output
                 tableOutput("descriptives")))
     ),
     
@@ -71,23 +80,53 @@ ui <- fluidPage(
 #what is happening in the background
 server <- function(input, output){
 
-  
+  #create scatterplot
   output$scatterplot <- renderPlot({
+    
+#checks before making the plot
+    # error message if there is no age range selected (only one age)
+    if (is.null(input$age) || (input$age[2] - input$age[1]) < 1 ){
+      plot.new()
+      text(
+        x = 0.5, y = 0.5,
+        labels = "Please select age range",
+        cex = 1.6,
+        font = 2
+      )
+      return()
+    }
+    
+    # error message if there is no travel class selected
+    if (is.null(input$class) || length(input$class) == 0) {
+      plot.new()
+      text(
+        x = 0.5, y = 0.5,
+        labels = "Please select travel class",
+        cex = 1.6,
+        font = 2
+      )
+      return()
+    }
+
+#if checks are passed then make the plot as follows:    
+    #filter data based on age and class input
     filtered <- data3 %>% 
       filter( Pclass %in% input$class,
               Age >= input$age[1],
               Age <= input$age[2])
+    #filter based on survival
     filtered$Survived <- factor(filtered$Survived,
                                 levels = c(0, 1),
                                 labels = c("Did Not Survive", "Survived"))
     
     
-    # Build the aesthetic mapping dynamically
+    # create aes for plot manually 
     mapping <- aes(x = Age, y = Fare)
     
-    # Only add color mapping if the checkbox is ticked
+    # only add color mapping if the checkbox is ticked
     ifelse(input$survival == TRUE, mapping <- aes(x = Age, y = Fare, color = Survived), mapping <- mapping) 
     
+    #create scatterplot
   ggplot(filtered, mapping) +
     geom_point(shape = 20, size = 2) +
     scale_color_manual(values = c("Did Not Survive" = "black", "Survived" = "#1b98E099")) +
@@ -99,16 +138,20 @@ server <- function(input, output){
       plot.title = element_text(hjust = 0.5, size = 16)
     )} )
   
+  #create descriptives table
   output$descriptives <- renderTable({
+    #filter by age and class
     filtered <- data3 %>% 
       filter( Pclass %in% input$class,
               Age >= input$age[1],
               Age <= input$age[2])
     
+    #group table by biological sex
     filtered %>% group_by(Sex) %>% 
-      summarise("Mean survival rate" = mean(Survived, na.rm = TRUE),
-                "Mean fare" = mean(Fare, na.rm = TRUE),
-                "Mean age" = mean(Age, na.rm = TRUE))
+      summarise("Mean survival rate" = mean(Survived, na.rm = TRUE), #display mean survival
+                "Mean fare" = mean(Fare, na.rm = TRUE),              #display mean fare
+                "Mean age" = mean(Age, na.rm = TRUE),                #display mean age
+                "Number of people" = n())                            #display number of passengers in this group
   })
   
   }
